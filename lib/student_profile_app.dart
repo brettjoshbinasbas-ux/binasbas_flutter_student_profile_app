@@ -11,7 +11,7 @@ class StudentProfileApp extends StatelessWidget {
       title: 'Student Profile',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.indigo,
+          seedColor: const Color(0xFF303F9F), // Refined Indigo 700
         ),
         useMaterial3: true,
       ),

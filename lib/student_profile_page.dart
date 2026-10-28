@@ -5,15 +5,18 @@ class StudentProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const primaryColor = Color(0xFF303F9F); // Refined Indigo 700
+    const secondaryColor = Color(0xFF3F51B5); // Classic Indigo 500
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF3F4F8),
+      backgroundColor: const Color(0xFFF4F5F9),
       appBar: AppBar(
         title: const Text(
           'Student Profile',
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
-        backgroundColor: Colors.indigo,
+        backgroundColor: primaryColor,
         foregroundColor: Colors.white,
         elevation: 2,
       ),
@@ -24,21 +27,21 @@ class StudentProfilePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Profile Avatar (Visual Change 1: Elevated container with decorative avatar)
+                // Profile Avatar (Visual Change 1: Layered dual-ring circular avatar with custom depth and initials)
                 const Center(
                   child: CircleAvatar(
                     radius: 58,
-                    backgroundColor: Colors.indigo,
+                    backgroundColor: primaryColor,
                     child: CircleAvatar(
                       radius: 54,
-                      backgroundColor: Color(0xFF3949AB),
+                      backgroundColor: secondaryColor,
                       child: Text(
-                        'YM',
+                        'BJB',
                         style: TextStyle(
-                          fontSize: 38,
+                          fontSize: 34,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          letterSpacing: 1.5,
+                          letterSpacing: 1.2,
                         ),
                       ),
                     ),
@@ -48,12 +51,12 @@ class StudentProfilePage extends StatelessWidget {
 
                 // Student Name and Course
                 const Text(
-                  'Yuan Misoles',
+                  'Brett Josh B. Binasbas',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
-                    color: Colors.indigo,
+                    color: primaryColor,
                     letterSpacing: 0.3,
                   ),
                 ),
@@ -69,7 +72,7 @@ class StudentProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                // Student Details (Visual Change 2: Styled Card with rounded corners and elevation)
+                // Student Details (Visual Change 2: Styled Card with rounded corners, custom dividers, and elevation)
                 Card(
                   elevation: 2,
                   shape: RoundedRectangleBorder(
@@ -80,16 +83,16 @@ class StudentProfilePage extends StatelessWidget {
                     child: Column(
                       children: [
                         ListTile(
-                          leading: Icon(Icons.badge, color: Colors.indigo),
+                          leading: Icon(Icons.badge, color: primaryColor),
                           title: Text(
                             'Student Number',
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
-                          subtitle: Text('555062'),
+                          subtitle: Text('560382'),
                         ),
                         Divider(height: 1, indent: 16, endIndent: 16),
                         ListTile(
-                          leading: Icon(Icons.school, color: Colors.indigo),
+                          leading: Icon(Icons.school, color: primaryColor),
                           title: Text(
                             'Year Level and Section',
                             style: TextStyle(fontWeight: FontWeight.w500),
@@ -98,12 +101,12 @@ class StudentProfilePage extends StatelessWidget {
                         ),
                         Divider(height: 1, indent: 16, endIndent: 16),
                         ListTile(
-                          leading: Icon(Icons.email, color: Colors.indigo),
+                          leading: Icon(Icons.email, color: primaryColor),
                           title: Text(
                             'Email Address',
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
-                          subtitle: Text('y.misoles.555062@umindanao.edu.ph'),
+                          subtitle: Text('b.binasbas.560382@umindanao.edu.ph'),
                         ),
                       ],
                     ),
@@ -114,7 +117,7 @@ class StudentProfilePage extends StatelessWidget {
                 // About Me Section
                 Row(
                   children: const [
-                    Icon(Icons.person, color: Colors.indigo, size: 22),
+                    Icon(Icons.person, color: primaryColor, size: 22),
                     SizedBox(width: 8),
                     Text(
                       'About Me',
@@ -135,9 +138,8 @@ class StudentProfilePage extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      'I am a 3rd-year Information Technology student passionate about software '
-                      'development and mobile app engineering. I enjoy learning modern frameworks '
-                      'and building intuitive, impactful digital experiences.',
+                      'I am a 3rd-year Information Technology student passionate about software engineering, game development, and modern technologies. '
+                      'I love vibe-coding, creating animations, and exploring creative digital projects while continuously learning new tools and frameworks.',
                       style: TextStyle(
                         fontSize: 15,
                         height: 1.6,
@@ -148,10 +150,10 @@ class StudentProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                // Hobbies and Interests Section (Visual Change 3: Themed Chips with icons)
+                // Hobbies and Interests Section (Visual Change 3: Themed Chips with category icons and wrap layout)
                 Row(
                   children: const [
-                    Icon(Icons.interests, color: Colors.indigo, size: 22),
+                    Icon(Icons.interests, color: primaryColor, size: 22),
                     SizedBox(width: 8),
                     Text(
                       'Hobbies and Interests',
@@ -169,28 +171,43 @@ class StudentProfilePage extends StatelessWidget {
                   runSpacing: 8,
                   children: [
                     Chip(
-                      avatar: Icon(Icons.code, size: 18, color: Colors.indigo),
+                      avatar: Icon(Icons.code, size: 18, color: primaryColor),
                       label: Text('Coding'),
                       backgroundColor: Colors.white,
                     ),
                     Chip(
-                      avatar: Icon(Icons.sports_esports, size: 18, color: Colors.indigo),
+                      avatar: Icon(Icons.terminal, size: 18, color: primaryColor),
+                      label: Text('Vibe-Coding'),
+                      backgroundColor: Colors.white,
+                    ),
+                    Chip(
+                      avatar: Icon(Icons.sports_esports, size: 18, color: primaryColor),
                       label: Text('Gaming'),
                       backgroundColor: Colors.white,
                     ),
                     Chip(
-                      avatar: Icon(Icons.sports_tennis, size: 18, color: Colors.indigo),
-                      label: Text('Badminton'),
+                      avatar: Icon(Icons.videogame_asset, size: 18, color: primaryColor),
+                      label: Text('Game Dev'),
                       backgroundColor: Colors.white,
                     ),
                     Chip(
-                      avatar: Icon(Icons.menu_book, size: 18, color: Colors.indigo),
-                      label: Text('Reading'),
+                      avatar: Icon(Icons.animation, size: 18, color: primaryColor),
+                      label: Text('Animations'),
                       backgroundColor: Colors.white,
                     ),
                     Chip(
-                      avatar: Icon(Icons.music_note, size: 18, color: Colors.indigo),
-                      label: Text('Music'),
+                      avatar: Icon(Icons.tv, size: 18, color: primaryColor),
+                      label: Text('Anime'),
+                      backgroundColor: Colors.white,
+                    ),
+                    Chip(
+                      avatar: Icon(Icons.music_note, size: 18, color: primaryColor),
+                      label: Text('Music & Singing'),
+                      backgroundColor: Colors.white,
+                    ),
+                    Chip(
+                      avatar: Icon(Icons.lightbulb_outline, size: 18, color: primaryColor),
+                      label: Text('Learning New Stuff'),
                       backgroundColor: Colors.white,
                     ),
                   ],

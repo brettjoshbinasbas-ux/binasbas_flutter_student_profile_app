@@ -1,19 +1,19 @@
 FLUTTER LABORATORY ACTIVITY 1: GUIDE QUESTIONS AND ANSWERS
-Student Name: Yuan Misoles
+Student Name: Brett Josh B. Binasbas
 Course: BS Information Technology (3rd Year, CCE106)
-Student Number: 555062
+Student Number: 560382
 
 1. What is a StatelessWidget, and why is it appropriate for this application?
-A StatelessWidget is a widget in Flutter that does not change its data or appearance while the app is running. It is appropriate for my student profile app because all my information like my name, student number, and hobbies is fixed and does not need to change or update based on user actions.
+A StatelessWidget is an immutable widget in Flutter whose state and properties cannot change dynamically at runtime once instantiated. It is appropriate for this profile application because all student information—such as my name, student number, and hobbies—is static and predefined, requiring no reactive updates or mutable state management.
 
 2. What does the build() method return?
-The build() method returns a widget that describes what the screen should look like. It puts together all the child widgets I defined such as the Scaffold, Column, Text, and Card so Flutter can draw them on the screen.
+The build() method returns a Widget hierarchy that describes the structural and visual presentation of the user interface on the screen. It composes child widgets together (such as Scaffold, Column, Text, and Card) so the Flutter rendering pipeline can lay them out and paint them.
 
 3. What is the difference between MaterialApp and Scaffold?
-MaterialApp is the main wrapper for the whole app that configures global settings like the title and theme colors. On the other hand, Scaffold is the basic layout structure for an individual page that provides slots for the AppBar and the body.
+MaterialApp is the top-level application wrapper that establishes global application configurations such as routing, localization, navigation, and theme color schemes. In contrast, Scaffold is an individual screen-level layout widget that implements the visual presentation framework of Material Design, providing slots for app bars, drawers, and body content.
 
 4. How do Column, Padding, and SizedBox help organize your screen?
-Column arranges widgets vertically in a neat order from top to bottom. Padding adds space around widgets so the text and cards do not stick to the edges of the phone, while SizedBox adds exact spacing between widgets so the layout does not look crowded.
+Column arranges child widgets vertically along a single axis from top to bottom. Padding inserts designated outer spacing around widgets to keep content cleanly inset from screen edges, while SizedBox enforces precise vertical separation between distinct UI sections to avoid visual clutter.
 
 5. Why did you use SingleChildScrollView in the profile page?
-I used SingleChildScrollView so the screen can be scrolled vertically if the profile details exceed the screen height. This makes sure all sections like About Me and Hobbies can be viewed on smaller phones and prevents layout overflow errors.
+SingleChildScrollView wraps the layout to provide vertical scrolling when content exceeds the physical height of the display viewport. This guarantees that all sections—including the About Me and Hobbies areas—remain fully accessible on devices with smaller screens and prevents layout overflow errors.
